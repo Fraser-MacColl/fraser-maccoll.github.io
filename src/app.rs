@@ -8,13 +8,13 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="output.css"/>
         <button
-            class="p-2 text-red"
+            class="p-32 text-red-600"
             on:click=move |_| set_count.update(|val| *val+=1)
         >
             "Click me: "
             {count}
         </button>
-        <p>
+        <p class="bg-pink-500 rounded-md text-white">
             "Double count: "
             {move || count.get() * 2}
         </p>
