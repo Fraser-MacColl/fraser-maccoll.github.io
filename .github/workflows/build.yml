@@ -24,13 +24,13 @@ jobs:
           target: wasm32-unknown-unknown
 
       - name: Install Trunk-rs
-        run: cargo install --locked trunk
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/latest/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
 
       - name: Generate tailwind output CSS
         run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
 
       - name: Build with Trunk-rs
-        run: trunk build --release
+        run: ./trunk build --release
 
       - name: Upload built artifacts
         uses: actions/upload-artifact@v4
