@@ -1,0 +1,5 @@
+[build]
+target = "base/index.html"
+dist = "dist"
+relase = true
+minify = "on_release"

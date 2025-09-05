@@ -1,0 +1,39 @@
+name: build.yml
+on:
+  workflow_call:
+    inputs:
+      git-ref:
+        description: Git reference to checkout and build
+        required: true
+        type: string
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{inputs.git-ref}}
+
+      - name: Install nightly Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          target: wasm32-unknown-unknown
+
+      - name: Install Trunk-rs
+        run: cargo install --locked trunk
+
+      - name: Generate tailwind output CSS
+        run: npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
+
+      - name: Build with Trunk-rs
+        run: trunk build --release
+
+      - name: Upload built artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: aritfact-${{inputs.git-ref}}
+          path: dist

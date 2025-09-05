@@ -43,7 +43,7 @@ jobs:
 
       # If using tailwind...
       - name: Download and install tailwindcss binary
-        run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./style/input.css" -o "./style/output.css" # run tailwind
+        run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./style/tailwind.css" -o "./style/build.css" # run tailwind
 
 
       - name: Download and install Trunk binary

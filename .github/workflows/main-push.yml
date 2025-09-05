@@ -1,0 +1,12 @@
+name: main-push.yml
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+  deploy:
+    uses: ./.github/workflows/deploy.yml
