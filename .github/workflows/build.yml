@@ -27,7 +27,7 @@ jobs:
         run: cargo install --locked trunk
 
       - name: Generate tailwind output CSS
-        run: npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
+        run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
 
       - name: Build with Trunk-rs
         run: trunk build --release
