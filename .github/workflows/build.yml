@@ -29,8 +29,6 @@ jobs:
       - name: Generate tailwind output CSS
         run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
 
-        run: ./trunk build --release --config
-
       - name: Build with Trunk-rs
         run: ./trunk config show && ./trunk build --release
 
