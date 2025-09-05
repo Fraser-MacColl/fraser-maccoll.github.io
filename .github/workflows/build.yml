@@ -27,7 +27,7 @@ jobs:
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
 
       - name: Generate tailwind output CSS
-        run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
+        run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./tailwind.css" -o "./build.css"
 
       - name: Build with Trunk-rs
         run: ./trunk config show && ./trunk build --release

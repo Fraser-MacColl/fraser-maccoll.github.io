@@ -1,6 +1,5 @@
 [build]
-target = "base/index.html"
-html_output = "dist/index.html"
+target = "index.html"
 dist = "dist"
 relase = true
 minify = "on_release"
