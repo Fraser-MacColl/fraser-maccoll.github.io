@@ -1,5 +1,6 @@
 [build]
 target = "base/index.html"
+html_output = "base/index.html"
 dist = "dist"
 relase = true
 minify = "on_release"
