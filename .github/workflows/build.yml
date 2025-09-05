@@ -23,6 +23,9 @@ jobs:
           toolchain: nightly
           target: wasm32-unknown-unknown
 
+      - name: Install wasm32 target
+        run: rustup target add wasm32-unknown-unknown
+
       - name: Install Trunk-rs
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
 
