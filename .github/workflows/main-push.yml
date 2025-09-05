@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
+    with:
+      git-ref: 'main'
   deploy:
     uses: ./.github/workflows/deploy.yml
     needs: build
+    with:
+      artifact-name: 'artifact-main'
