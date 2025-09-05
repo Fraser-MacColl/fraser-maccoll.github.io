@@ -24,7 +24,7 @@ jobs:
           target: wasm32-unknown-unknown
 
       - name: Install Trunk-rs
-        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/latest/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
 
       - name: Generate tailwind output CSS
         run: npm install -D @tailwindcss/cli && npx @tailwindcss/cli -i "./base/tailwind.css" -o "./base/build.css"
